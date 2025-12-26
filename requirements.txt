@@ -1,0 +1,14 @@
+streamlit
+langchain-groq
+langchain
+langchain_core
+langchain_community
+sentence-transformers
+fastembed  # Optional if not used
+pypdf2
+python-docx
+plotly
+pandas
+numpy
+xlsxwriter
+spacy
