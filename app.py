@@ -28,24 +28,54 @@ st.markdown("""
     .main-header {
         background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         color: white;
-        padding: 3rem 2rem;
+        padding: 2rem 2rem;
         border-radius: 15px;
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         box-shadow: 0 8px 32px rgba(139, 69, 19, 0.3);
     }
 
     .main-title {
         font-size: 3rem;
         font-weight: 800;
-        margin-bottom: 0.5rem;
+        margin: 0;
+        padding: 0;
         font-family: 'Georgia', serif;
+        line-height: 1.2;
     }
 
     .main-subtitle {
         font-size: 1.4rem;
         opacity: 0.95;
         font-weight: 300;
+        margin: 0.5rem 0 0 0;
+        padding: 0;
+        line-height: 1.3;
+    }
+
+    .header-tagline {
+        font-size: 1.1rem;
+        margin: 0.5rem 0 0 0;
+        padding: 0;
+        opacity: 0.9;
+        line-height: 1.3;
+    }
+    
+    .image-container {
+        text-align: center;
+        margin: 1rem auto 2rem auto;
+        padding: 0;
+    }
+
+    .header-image {
+        max-width: 700px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+        display: block;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
 
     .brand-section {
@@ -165,6 +195,77 @@ st.markdown("""
 
     .stButton button {
         width: 100%;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 0.75rem 2rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 4px 15px rgba(34, 139, 34, 0.3);
+    }
+    
+    .stButton > button[kind="primary"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(34, 139, 34, 0.4);
+    }
+    
+    .stButton > button[kind="secondary"] {
+        background: linear-gradient(135deg, #DC143C 0%, #FF6347 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    }
+    
+    .stButton > button[kind="secondary"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+    }
+    
+    .control-center-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+        border: 2px solid #f0f0f0;
+        margin-bottom: 2rem;
+    }
+    
+    .download-btn-container {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .legend-container {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--primary);
+    }
+    
+    .legend-item {
+        display: inline-block;
+        margin: 0.5rem 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+    
+    .legend-strong {
+        background-color: #d4edda;
+        color: #155724;
+        border: 2px solid #c3e6cb;
+    }
+    
+    .legend-weak {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 2px solid #f5c6cb;
     }
 
     /* File uploader styling */
@@ -180,30 +281,34 @@ def main():
     # Premium Header Section
     st.markdown("""
     <div class='main-header'>
-        <div class='main-title'>U&I GARMENTS</div>
+        <div class='main-title'>U&I GARMENTS (PVT) LTD</div>
         <div class='main-subtitle'>AI-Powered Bulk Resume Analyzer</div>
-        <p style='font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;'>
+        <p class='header-tagline'>
             Premium Talent Assessment for Pakistan's Leading Fashion Retail Group
         </p>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Separate Image Section
+    st.markdown("""
+    <div class='image-container'>
+        <img src='https://i.ibb.co/60NpFVwj/New-Image-Web-copy.png' alt='U&I Garments' class='header-image'>
+    </div>
+    """, unsafe_allow_html=True)
 
-    # Brands Showcase
+    # HR Department Info Section
     st.markdown("""
     <div class='brand-section'>
-        <h3 style='color: white; margin-bottom: 1.5rem;'>OUR PRESTIGIOUS BRANDS PORTFOLIO</h3>
-        <div>
-            <span class='brand-tag'>Junaid Jamshed</span>
-            <span class='brand-tag'>Almirah</span>
-            <span class='brand-tag'>Cast & Crew</span>
-            <span class='brand-tag'>Panjnad</span>
-            <span class='brand-tag'>Al-Tayyab Beauty</span>
-        </div>
+        <h3 style='color: white; margin-bottom: 1rem;'> HR EXCELLENCE CENTER</h3>
+        <p style='font-size: 1.1rem; margin: 0; line-height: 1.6;'>
+            Streamline your recruitment process with AI-powered resume analysis<br>
+            <strong>For Internal Use Only</strong> | HR Department | Talent Acquisition Team
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
     # Features Section
-    st.markdown("## 🎯 HR Excellence Features")
+    st.markdown("## HR Excellence Features")
 
     col1, col2, col3 = st.columns(3)
 
@@ -249,7 +354,6 @@ def main():
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.markdown('<div class="section-card">', unsafe_allow_html=True)
         st.subheader("🎯 Job Description")
 
         # SINGLE file upload for JD
@@ -275,10 +379,7 @@ def main():
             )
             st.session_state.job_description = job_description
 
-        st.markdown('</div>', unsafe_allow_html=True)
-
     with col2:
-        st.markdown('<div class="section-card">', unsafe_allow_html=True)
         st.subheader("📄 Candidate Resumes")
 
         # MULTIPLE file upload for resumes - CORRECTED
@@ -298,30 +399,33 @@ def main():
             for i, file in enumerate(uploaded_resumes):
                 st.write(f"{i+1}. {file.name}")
 
-        st.markdown('</div>', unsafe_allow_html=True)
-
     # Analysis Controls
     st.markdown("---")
     st.markdown("## 🔍 Analysis Control Center")
 
-    col1, col2, col3 = st.columns([2, 1, 1])
+    col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.info("""
-        **Ready to analyze?**
-        - Ensure job description is entered/uploaded
-        - Select multiple resume files
-        - Click 'Analyze All Resumes' to start bulk processing
-        """)
+        analyze_all = st.button("🚀 Analyze All Resumes", use_container_width=True, type="primary")
+        st.markdown("""
+        <div style='text-align: center; margin-top: 0.5rem; color: #666; font-size: 0.9rem;'>
+            Process all uploaded resumes with AI-powered matching
+        </div>
+        """, unsafe_allow_html=True)
 
     with col2:
-        analyze_all = st.button("🚀 Analyze All Resumes", use_container_width=True, type="primary")
-
-    with col3:
-        if st.button("🔄 Clear Results", use_container_width=True):
-            st.session_state.analysis_results = []
-            st.session_state.processed_files = set()
-            st.rerun()
+        clear_btn = st.button("🔄 Clear All Results", use_container_width=True, type="secondary")
+        st.markdown("""
+        <div style='text-align: center; margin-top: 0.5rem; color: #666; font-size: 0.9rem;'>
+            Reset analysis and start fresh
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Handle clear button
+    if clear_btn:
+        st.session_state.analysis_results = []
+        st.session_state.processed_files = set()
+        st.rerun()
 
     # Process Analysis - CORRECTED LOGIC
     if analyze_all and uploaded_resumes and st.session_state.job_description:
@@ -435,6 +539,17 @@ def main():
 
         # Display results table - UPDATED: Only 4 columns
         st.markdown("### 👥 Candidate Comparison Table")
+        
+        # Add legend
+        st.markdown("""
+        <div class='legend-container'>
+            <strong style='font-size: 1.1rem; color: #2F4F4F;'>📊 Match Score Legend:</strong>
+            <div style='margin-top: 0.5rem;'>
+                <span class='legend-item legend-strong'>✅ Strong Match: ≥70% - Highly Recommended</span>
+                <span class='legend-item legend-weak'>⚠️ Weak Match: <70% - Needs Review</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
         # Add styling to table based on match score
         def color_rows(row):
@@ -477,13 +592,23 @@ def main():
                 worksheet.set_column(i, i, min(max_len, 50))
 
         excel_data = output.getvalue()
+        
+        # Attractive download button
+        st.markdown('<div class="download-btn-container">', unsafe_allow_html=True)
         st.download_button(
             label="📊 Download Excel Report",
             data=excel_data,
             file_name=f"resume_analysis_results_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx",
             mime="application/vnd.ms-excel",
-            use_container_width=True
+            use_container_width=False,
+            type="primary"
         )
+        st.markdown("""
+        <div style='text-align: center; margin-top: 0.5rem; color: #666; font-size: 0.9rem;'>
+            Download complete analysis with color-coded match scores
+        </div>
+        """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     else:
         # Show instructions when no results
